@@ -1,6 +1,7 @@
 let now_playing = document.querySelector(".now-playing");
 let track_art = document.querySelector(".track-art");
-let track_name = document.querySelector(".track-movie");
+let track_movie = document.querySelector(".track-movie");
+let track_name = document.querySelector(".track-name");
 let track_artist = document.querySelector(".track-artist");
 let playpause_btn = document.querySelector(".playpause-track");
 let next_btn = document.querySelector(".next-track");
@@ -57,7 +58,8 @@ function loadTrack(track_index) {
     curr_track.src = track_list[track_index].path;
     curr_track.load();
     track_art.style.backgroundImage = "url(" + track_list[track_index].image + ")";
-    track_name.textContent = track_list[track_index].movie;
+    track_name.textContent = track_list[track_index].name;
+    track_movie.textContent = track_list[track_index].movie;
     track_artist.textContent = track_list[track_index].artist;
     now_playing.textContent = "PLAYING " + (track_index + 1) + " OF " + track_list.length;
     updateTimer = setInterval(seekUpdate, 1000);
